@@ -4,6 +4,7 @@ struct UploadImageView: View {
     // State variables to handle image picker
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    @State private var pickerSourceType: PickerSourceType = .photoLibrary
 
     var body: some View {
         VStack {
@@ -76,6 +77,7 @@ struct UploadImageView: View {
             // Upload Image Button
             Button(action: {
                 // This will toggle the showingImagePicker to true
+                self.pickerSourceType = .photoLibrary  // You can toggle this to .camera if you want
                 self.showingImagePicker = true
             }) {
                 Text("Upload Image")
@@ -88,7 +90,8 @@ struct UploadImageView: View {
             }
             .padding(.horizontal, 40)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                // ImagePicker() is a struct you will need to define using UIKit's UIImagePickerController
+                            CustomImagePicker(inputImage: $inputImage, sourceType: pickerSourceType)
+                
             }
 
             Spacer()
