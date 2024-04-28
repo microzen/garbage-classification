@@ -17,9 +17,13 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def test_image_processing():
     # Path to your image
     if request.method == 'POST':
+        print("POST -- Z")
         if 'image' not in request.files:
+            print('file image can\'t find!')
             return 'No file part'
-        file = request.files['img']
+        print("pass")
+        file = request.files['image']
+        print(file.filename)
         file.save(os.path.join("./img", "123.jpg"))
         print("success")
         return 'success'
