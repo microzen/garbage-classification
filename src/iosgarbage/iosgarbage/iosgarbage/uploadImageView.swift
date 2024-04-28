@@ -89,7 +89,7 @@ struct UploadImageView: View {
                     .cornerRadius(20)
                     
             }
-            .offset(y:-70)
+            .offset(y:-130)
             .padding(.horizontal, 40)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                             CustomImagePicker(inputImage: $inputImage, sourceType: pickerSourceType)
