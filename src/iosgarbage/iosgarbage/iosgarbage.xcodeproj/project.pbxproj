@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B98C4262BDE4B3C00C4F861 /* rewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C4252BDE4B3C00C4F861 /* rewardsView.swift */; };
 		8B98C4282BDE604A00C4F861 /* EcoHuggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C4272BDE604A00C4F861 /* EcoHuggerView.swift */; };
+		8B98C42A2BDECA1300C4F861 /* RecycleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C4292BDECA1300C4F861 /* RecycleInfoView.swift */; };
 		C466C8E12BDDD826003D7F7F /* iosgarbageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466C8E02BDDD826003D7F7F /* iosgarbageApp.swift */; };
 		C466C8E32BDDD826003D7F7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466C8E22BDDD826003D7F7F /* ContentView.swift */; };
 		C466C8E52BDDD827003D7F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C466C8E42BDDD827003D7F7F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		8B98C4252BDE4B3C00C4F861 /* rewardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewardsView.swift; sourceTree = "<group>"; };
 		8B98C4272BDE604A00C4F861 /* EcoHuggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoHuggerView.swift; sourceTree = "<group>"; };
+		8B98C4292BDECA1300C4F861 /* RecycleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleInfoView.swift; sourceTree = "<group>"; };
 		C466C8DD2BDDD826003D7F7F /* iosgarbage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosgarbage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C466C8E02BDDD826003D7F7F /* iosgarbageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosgarbageApp.swift; sourceTree = "<group>"; };
 		C466C8E22BDDD826003D7F7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				C4C406A12BDE53AE00BA74A1 /* mapView.swift */,
 				C4C406A52BDE585A00BA74A1 /* MapViewControllerWrapper.swift */,
 				8B98C4272BDE604A00C4F861 /* EcoHuggerView.swift */,
+				8B98C4292BDECA1300C4F861 /* RecycleInfoView.swift */,
 			);
 			path = iosgarbage;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				C4C406A62BDE585A00BA74A1 /* MapViewControllerWrapper.swift in Sources */,
 				C466C90C2BDDDD7D003D7F7F /* viewModel.swift in Sources */,
 				8B98C4262BDE4B3C00C4F861 /* rewardsView.swift in Sources */,
+				8B98C42A2BDECA1300C4F861 /* RecycleInfoView.swift in Sources */,
 				C4C4069E2BDE349900BA74A1 /* ImagePicker.swift in Sources */,
 				C4C4069A2BDDF7F400BA74A1 /* logInView.swift in Sources */,
 				C466C8E12BDDD826003D7F7F /* iosgarbageApp.swift in Sources */,
