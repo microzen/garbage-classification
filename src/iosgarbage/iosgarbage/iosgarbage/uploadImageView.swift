@@ -97,26 +97,26 @@ struct UploadImageView: View {
                 .background(Color.white) // Set the background color
                 .cornerRadius(20) // Adds rounded corners
                 .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
-                .offset(y:160)
+                .offset(y:190)
                 HStack{
-                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                    Image("rank_icon") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100, height: 200)
-                            .offset(y:170)
-                            .offset(x:120)
-                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                            .frame(width: 50, height:200)
+                            .offset(y:190)
+                            .offset(x:185)
+                    Image("mdi_leaf") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100, height: 200)
-                            .offset(y:170)
-                            .offset(x:140)
-                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                            .frame(width: 50, height: 200)
+                            .offset(y:185)
+                            .offset(x:-5)
+                    Image("carbon_map") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100, height: 200)
-                            .offset(y:170)
-                            .offset(x:70)
+                            .frame(width: 40, height: 50)
+                            .offset(y:185)
+                            .offset(x:-220)
                 }
             
             }
