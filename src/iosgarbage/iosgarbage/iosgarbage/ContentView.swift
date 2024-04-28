@@ -9,21 +9,20 @@ struct ContentView: View {
     @StateObject private var viewModel = EventViewModel()
 
     var body: some View {
-       
+        ZStack{
+            Image("logo1") // Make sure you have a 'logo' image in your assets
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300)
+                    .offset(y:-70)
+                    .onAppear {
+                        print("Logo image appears")
+                    }
+            
             VStack {
                 
                 Spacer()
-                
-                Image("logo1") // Make sure you have a 'logo' image in your assets
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .onAppear {
-                            print("Logo image appears")
-                        }
-                
-                Spacer()
-                
+              
                 // Event Data Text
                 if !viewModel.eventData.isEmpty {
                     Text("Event Data: \(viewModel.eventData)")
@@ -60,6 +59,9 @@ struct ContentView: View {
                 viewModel.fetchEvent()
             }
         }
+            
+        }
+            
         
         
     
