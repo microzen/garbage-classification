@@ -1,6 +1,10 @@
 # garbage-classification
 Hack Davis 2024
 
+# UI
+
+![ui](./doc/601714340278_.pic.jpg)
+
 # DOCUMENT
 
 ```python
