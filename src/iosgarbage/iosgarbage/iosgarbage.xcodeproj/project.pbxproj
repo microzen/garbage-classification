@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B65E3A32BDE045A00D3C046 /* rewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B65E3A22BDE045A00D3C046 /* rewardsView.swift */; };
 		C466C8E12BDDD826003D7F7F /* iosgarbageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466C8E02BDDD826003D7F7F /* iosgarbageApp.swift */; };
 		C466C8E32BDDD826003D7F7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466C8E22BDDD826003D7F7F /* ContentView.swift */; };
 		C466C8E52BDDD827003D7F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C466C8E42BDDD827003D7F7F /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B65E3A22BDE045A00D3C046 /* rewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rewardsView.swift; sourceTree = "<group>"; };
 		C466C8DD2BDDD826003D7F7F /* iosgarbage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosgarbage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C466C8E02BDDD826003D7F7F /* iosgarbageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosgarbageApp.swift; sourceTree = "<group>"; };
 		C466C8E22BDDD826003D7F7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				C466C90B2BDDDD7D003D7F7F /* viewModel.swift */,
 				C4C406992BDDF7F400BA74A1 /* logInView.swift */,
 				C4C4069B2BDE024100BA74A1 /* uploadImageView.swift */,
+				8B65E3A22BDE045A00D3C046 /* rewardsView.swift */,
 			);
 			path = iosgarbage;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				C4C4069C2BDE024100BA74A1 /* uploadImageView.swift in Sources */,
 				C466C8E32BDDD826003D7F7F /* ContentView.swift in Sources */,
 				C466C90C2BDDDD7D003D7F7F /* viewModel.swift in Sources */,
+				8B65E3A32BDE045A00D3C046 /* rewardsView.swift in Sources */,
 				C4C4069A2BDDF7F400BA74A1 /* logInView.swift in Sources */,
 				C466C8E12BDDD826003D7F7F /* iosgarbageApp.swift in Sources */,
 			);
