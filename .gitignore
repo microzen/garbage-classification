@@ -1,2 +1,6 @@
 .idea
 .DS_Store
+
+##py
+.venv
+__pycache__

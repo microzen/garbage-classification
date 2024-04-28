@@ -9,6 +9,8 @@ There are the first few steps to help you to run up both projects (Flask and Rea
 
 Flask is a Web framework, and it is used as a RESTFul API in our project, to provide back-end server. It based on Python, and we use `pip` to manage all python packages.
 
+[More Info](https://flask.palletsprojects.com/en/3.0.x/)
+
 To check if `pip` and `python` work in your terminal or not.
 ```shell
 # you could use python (pip) or python3 (pip3), in this tutorials, we go with python3.
@@ -28,6 +30,8 @@ if not, please install [Python](https://www.python.org/downloads/) first.
 Install Flask package:
 
 ```shell
+python3 -m venv .venv
+. .venv/bin/activate
 pip3 install Flask
 
 # install restful api
