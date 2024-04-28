@@ -7,7 +7,8 @@ import Combine
 
 struct ContentView: View {
     @StateObject private var viewModel = EventViewModel()
-
+    @State private var showLoginView = false
+    
     var body: some View {
         ZStack{
             Image("logo1") // Make sure you have a 'logo' image in your assets
@@ -43,6 +44,8 @@ struct ContentView: View {
                 // Log In Button
                 Button("Log In") {
                     // Handle log in action
+                    self.showLoginView = true
+                    //LoginView()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(height: 50)
@@ -57,6 +60,9 @@ struct ContentView: View {
             }
             .onAppear {
                 viewModel.fetchEvent()
+            }
+            .fullScreenCover(isPresented: $showLoginView) {
+                LoginView()
             }
         }
             
