@@ -11,19 +11,62 @@ struct UploadImageView: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding(.top)
-
-            Text("We will advise the correct bin & earn your EcoCoin!")
-                .font(.headline)
-                .foregroundColor(.secondary)
-                .padding()
-
-            Spacer()
-
-            // Illustration or image placeholder
-            Image("recycle_illustration") // Replace with your actual image name
-                .resizable()
-                .scaledToFit()
-                .frame(height: 200)
+            
+            HStack{
+                Text("We will advise the correct bin & earn your ")
+                    .fontWeight(.heavy)
+                    .bold()
+                    .foregroundColor(.secondary) +
+                Text("EcoCoin!")
+                    .fontWeight(.heavy)
+                    .bold()
+                    .foregroundColor(.green)
+                  
+            }
+            .padding()
+            
+            ZStack{
+                Rectangle()
+                .fill(Color.clear) // Makes the rectangle transparent
+                .frame(width: 300, height: 200) // Set the size of the empty box
+                .background(Color.white) // Set the background color
+                .cornerRadius(20) // Adds rounded corners
+                .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
+                .offset(y:80)
+               
+                
+                Spacer() // Pushes everything to the center
+                
+                Image("trash") // Make sure you have a 'logo' image in your assets
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .offset(y:-50)
+                        .offset(x:5)
+                        .onAppear {
+                            print("Logo image appears")
+                        }
+                Spacer()
+                Image("leaf2") // Make sure you have a 'logo' image in your assets
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .offset(y:170)
+                        .offset(x:120)
+                        .onAppear {
+                            print("Logo image appears")
+                        }
+               
+                
+                // Illustration or image placeholder
+//                Image("recycle_illustration") // Replace with your actual image name
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(height: 200)
+            }
+            
+            
+            
 
             Spacer()
 
@@ -35,9 +78,10 @@ struct UploadImageView: View {
                 Text("Upload Image")
                     .foregroundColor(.white)
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: 150)
                     .background(Color.green)
-                    .cornerRadius(10)
+                    .cornerRadius(20)
+                    .offset(y:-160)
             }
             .padding(.horizontal, 40)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -45,7 +89,39 @@ struct UploadImageView: View {
             }
 
             Spacer()
-
+            
+            ZStack{
+                Rectangle()
+                .fill(Color.clear) // Makes the rectangle transparent
+                .frame(width: 100000, height: 70) // Set the size of the empty box
+                .background(Color.white) // Set the background color
+                .cornerRadius(20) // Adds rounded corners
+                .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
+                .offset(y:160)
+                HStack{
+                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 200)
+                            .offset(y:170)
+                            .offset(x:120)
+                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 200)
+                            .offset(y:170)
+                            .offset(x:140)
+                    Image("leaf2") // Make sure you have a 'logo' image in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 200)
+                            .offset(y:170)
+                            .offset(x:70)
+                }
+            
+            }
+            
+            
             // Your decorative graphics at the bottom
             Image("decorative_leaf") // Replace with your actual image name
                 .resizable()
