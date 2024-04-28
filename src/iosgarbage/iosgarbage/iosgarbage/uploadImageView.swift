@@ -11,19 +11,22 @@ struct UploadImageView: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding(.top)
+                .offset(y:40)
             
-            HStack{
-                Text("We will advise the correct bin & earn your ")
+            VStack{
+                Text("Advise the correct bin & earn your ")
                     .fontWeight(.heavy)
                     .bold()
-                    .foregroundColor(.secondary) +
+                    .foregroundColor(.secondary)
                 Text("EcoCoin!")
                     .fontWeight(.heavy)
                     .bold()
                     .foregroundColor(.green)
+                
                   
             }
             .padding()
+            .offset(y:40)
             
             ZStack{
                 Rectangle()
@@ -32,7 +35,7 @@ struct UploadImageView: View {
                 .background(Color.white) // Set the background color
                 .cornerRadius(20) // Adds rounded corners
                 .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
-                .offset(y:80)
+                .offset(y:100)
                
                 
                 Spacer() // Pushes everything to the center
@@ -41,7 +44,7 @@ struct UploadImageView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
-                        .offset(y:-50)
+                        .offset(y:-20)
                         .offset(x:5)
                         .onAppear {
                             print("Logo image appears")
@@ -51,7 +54,7 @@ struct UploadImageView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300, height: 300)
-                        .offset(y:170)
+                        .offset(y:200)
                         .offset(x:120)
                         .onAppear {
                             print("Logo image appears")
@@ -81,7 +84,7 @@ struct UploadImageView: View {
                     .frame(maxWidth: 150)
                     .background(Color.green)
                     .cornerRadius(20)
-                    .offset(y:-160)
+                    .offset(y:-60)
             }
             .padding(.horizontal, 40)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -99,24 +102,24 @@ struct UploadImageView: View {
                 .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
                 .offset(y:190)
                 HStack{
-                    Image("rank_icon") // Make sure you have a 'logo' image in your assets
+                    Image("rank_grey2") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height:200)
-                            .offset(y:190)
-                            .offset(x:185)
+                            .offset(y:185)
+                            .offset(x:190)
                     Image("mdi_leaf") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height: 200)
                             .offset(y:185)
-                            .offset(x:-5)
+                            .offset(x:0)
                     Image("carbon_map") // Make sure you have a 'logo' image in your assets
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 40, height: 50)
+                            .frame(width: 50, height: 50)
                             .offset(y:185)
-                            .offset(x:-220)
+                            .offset(x:-190)
                 }
             
             }

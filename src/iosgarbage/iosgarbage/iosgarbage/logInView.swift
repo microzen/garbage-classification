@@ -4,6 +4,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var rememberMe: Bool = false
+    @State private var isAuthenticated = false  // State to control navigation
 
     var body: some View {
         ZStack{
@@ -16,6 +17,11 @@ struct LoginView: View {
                     .onAppear {
                         print("Logo image appears")
                     }
+            NavigationLink(destination: UploadImageView(), isActive: $isAuthenticated) {
+                               EmptyView()
+                           }
+                           .hidden()
+            
             VStack {
                 
                 Spacer()
@@ -64,6 +70,9 @@ struct LoginView: View {
 
                 Button(action: {
                     // Login action
+                    print("Sign In pressed")  // Debug statement
+                    self.isAuthenticated = true
+                
                 }) {
                     Text("Sign In")
                         .font(.headline)
@@ -76,7 +85,9 @@ struct LoginView: View {
                         .padding(.horizontal, 50)
                 }
                 .padding(.top, 20)
-
+                .fullScreenCover(isPresented: $isAuthenticated) {
+                    UploadImageView()
+                }
                 Spacer()
             }
             .background(Color.gray.opacity(0.1))
