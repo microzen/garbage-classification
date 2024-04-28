@@ -65,11 +65,6 @@ struct UploadImageView: View {
                         }
                
                 
-                // Illustration or image placeholder
-//                Image("recycle_illustration") // Replace with your actual image name
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(height: 200)
             }
             
             

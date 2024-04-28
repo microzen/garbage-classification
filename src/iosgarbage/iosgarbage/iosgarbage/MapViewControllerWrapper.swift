@@ -1,16 +1,112 @@
 import SwiftUI
-import UIKit
+import MapKit
 
-struct MapViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> MapViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else {
-            fatalError("Failed to instantiate MapViewController from storyboard")
+struct MapViewControllerWrapper: View {
+    @State private var showingMap = false
+    @State private var showingRank = false
+    @State private var showingHome = false // State to control navigation to the home page
+    let mylocation = CLLocationCoordinate2D(latitude: 38.541755, longitude: -121.759575)
+
+    var body: some View {
+        NavigationView {
+            TabView {
+                MapView(location: mylocation)
+                    .tabItem {
+                        Image(systemName: "map")
+                        Text("Map")
+                    }
+
+                HomePage()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+
+                RewardsViewInMap()
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("Rewards")
+                    }
+            }
+            .overlay(
+                BottomBarInMap(showingMap: $showingMap, showingRank: $showingRank, showingHome: $showingHome),
+                alignment: .bottom
+            )
         }
-        return viewController
     }
-    
-    func updateUIViewController(_ uiViewController: MapViewController, context: Context) {
-        // Update the view controller if necessary
+}
+
+struct BottomBarInMap: View {
+    @Binding var showingMap: Bool
+    @Binding var showingRank: Bool
+    @Binding var showingHome: Bool
+
+    var body: some View {
+        HStack {
+            Button(action: {
+                self.showingMap = true // Trigger map showing, adapt with actual navigation if needed
+            }) {
+                Image("carbon_map")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            }
+            .padding(.leading, 40)
+
+            Spacer()
+
+            // This button is now purely decorative as NavigationLink triggers navigation
+            NavigationLink(destination: UploadImageView(), isActive: $showingHome) {
+                Image("mdi_leaf")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            }
+            .padding(.trailing, 40)
+            .offset(x: 35)
+
+            Spacer()
+
+            NavigationLink(destination: RewardsView(), isActive: $showingRank) {
+                           Image("rank_grey2")
+                               .resizable()
+                               .scaledToFit()
+                               .frame(width: 40, height: 40)
+                       }
+                       .padding(.trailing, 40)
+            
+        }
+        .frame(width: UIScreen.main.bounds.width, height: 70)
+        .background(Color.white)
+        .cornerRadius(20)
+        .shadow(color: .gray, radius: 5, x: 0, y: 2)
+        .offset(y: 33)
+    }
+}
+
+struct MapView: View {
+    let location: CLLocationCoordinate2D
+
+    var body: some View {
+        Map(coordinateRegion: .constant(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))))
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct HomePage: View {
+    var body: some View {
+        Text("Home Page")
+    }
+}
+
+struct RewardsViewInMap: View {
+    var body: some View {
+        Text("Rewards Page")
+    }
+}
+
+struct MapViewControllerWrapper_Previews: PreviewProvider {
+    static var previews: some View {
+        MapViewControllerWrapper()
     }
 }
