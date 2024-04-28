@@ -54,6 +54,8 @@ struct RewardCell: View {
 }
 
 struct RewardsView: View {
+    
+    @State private var showingEcoRanker = false
     @State private var ecoCoins = 550
     @State private var rewards = [
         Reward(storeName: "Whole Foods", coinsRequired: 100, discountDescription: "Use 100 EcoCoins to get $10 offyour next purchase."),
@@ -81,16 +83,22 @@ struct RewardsView: View {
                     
                     Button(action: {
                         // Handle rank action
+                        self.showingEcoRanker = true
+                        
                     }) {
                         HStack {
                             Image("rank_star")
                             Text("Rank")
+                    
                         }
                         .foregroundColor(Color(red: 64/255, green: 119/255, blue: 89/255))
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
                         .padding(.trailing, 20)
+                        .sheet(isPresented: $showingEcoRanker) {
+                            RankingView()
+                        }
                     }
                 }
                 .padding()
@@ -162,16 +170,23 @@ var customBottomBar: some View {
             .cornerRadius(20)
             .shadow(color: .gray, radius: 5, x: 0, y: 2)
         HStack {
+            
+            
             Image("carbon_map")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)
                 .padding(.leading,40)
+            
             Spacer()
+            
             Image("grey_leaf")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)
+            
+            
+            
             Spacer()
             Image("rank_star")
                 .resizable()
