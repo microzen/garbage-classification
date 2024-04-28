@@ -19,6 +19,8 @@
 		C4C4069A2BDDF7F400BA74A1 /* logInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C406992BDDF7F400BA74A1 /* logInView.swift */; };
 		C4C4069C2BDE024100BA74A1 /* uploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4069B2BDE024100BA74A1 /* uploadImageView.swift */; };
 		C4C4069E2BDE349900BA74A1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4069D2BDE349900BA74A1 /* ImagePicker.swift */; };
+		C4C406A22BDE53AE00BA74A1 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C406A12BDE53AE00BA74A1 /* mapView.swift */; };
+		C4C406A62BDE585A00BA74A1 /* MapViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C406A52BDE585A00BA74A1 /* MapViewControllerWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		C4C406992BDDF7F400BA74A1 /* logInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInView.swift; sourceTree = "<group>"; };
 		C4C4069B2BDE024100BA74A1 /* uploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadImageView.swift; sourceTree = "<group>"; };
 		C4C4069D2BDE349900BA74A1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C4C406A12BDE53AE00BA74A1 /* mapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
+		C4C406A52BDE585A00BA74A1 /* MapViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				C4C406992BDDF7F400BA74A1 /* logInView.swift */,
 				C4C4069B2BDE024100BA74A1 /* uploadImageView.swift */,
 				C4C4069D2BDE349900BA74A1 /* ImagePicker.swift */,
+				C4C406A12BDE53AE00BA74A1 /* mapView.swift */,
+				C4C406A52BDE585A00BA74A1 /* MapViewControllerWrapper.swift */,
 			);
 			path = iosgarbage;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C4069C2BDE024100BA74A1 /* uploadImageView.swift in Sources */,
+				C4C406A22BDE53AE00BA74A1 /* mapView.swift in Sources */,
 				C466C8E32BDDD826003D7F7F /* ContentView.swift in Sources */,
+				C4C406A62BDE585A00BA74A1 /* MapViewControllerWrapper.swift in Sources */,
 				C466C90C2BDDDD7D003D7F7F /* viewModel.swift in Sources */,
 				8B98C4262BDE4B3C00C4F861 /* rewardsView.swift in Sources */,
 				C4C4069E2BDE349900BA74A1 /* ImagePicker.swift in Sources */,

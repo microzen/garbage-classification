@@ -5,6 +5,7 @@ struct UploadImageView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var pickerSourceType: PickerSourceType = .photoLibrary
+    @State private var showingMap = false // State to control navigation to the map view
 
     var body: some View {
         VStack() {
@@ -86,8 +87,9 @@ struct UploadImageView: View {
                     .frame(maxWidth: 150)
                     .background(Color.green)
                     .cornerRadius(20)
+                    
             }
-            .offset(y:-90)
+            .offset(y:-70)
             .padding(.horizontal, 40)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                             CustomImagePicker(inputImage: $inputImage, sourceType: pickerSourceType)
@@ -95,37 +97,7 @@ struct UploadImageView: View {
             }
 
             Spacer()
-            
-//            ZStack{
-//                Rectangle()
-//                .fill(Color.clear) // Makes the rectangle transparent
-//                .frame(width: 100000, height: 70) // Set the size of the empty box
-//                .background(Color.white) // Set the background color
-//                .cornerRadius(20) // Adds rounded corners
-//                .shadow(color: .gray, radius: 5, x: 0, y: 2) // Adds the shadow
-//                .offset(y:190)
-//                HStack{
-//                    Image("rank_grey2") // Make sure you have a 'logo' image in your assets
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 50, height:200)
-//                            .offset(y:185)
-//                            .offset(x:190)
-//                    Image("mdi_leaf") // Make sure you have a 'logo' image in your assets
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 50, height: 200)
-//                            .offset(y:185)
-//                            .offset(x:0)
-//                    Image("carbon_map") // Make sure you have a 'logo' image in your assets
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 50, height: 50)
-//                            .offset(y:185)
-//                            .offset(x:-190)
-//                }
-//            
-//            }
+ 
             ZStack {
                 Rectangle()
                     .fill(Color.clear)
@@ -134,11 +106,19 @@ struct UploadImageView: View {
                     .cornerRadius(20)
                     .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 HStack {
-                    Image("carbon_map")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40)
-                        .padding(.leading,40)
+                    Button(action: {
+                            self.showingMap = true
+                        }) {
+                            Image("carbon_map")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                        }
+                        .padding(.leading, 40)
+                        .sheet(isPresented: $showingMap) {
+                            MapViewControllerWrapper()
+                                .previewDisplayName("Map View Controller")
+                        }
                     Spacer()
                     Image("mdi_leaf")
                         .resizable()
