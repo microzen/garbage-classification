@@ -56,6 +56,7 @@ struct CustomImagePicker: UIViewControllerRepresentable {
                     do {
                         // Write the image data to the file system
                         try imageData.write(to: filename)
+                        print("Image name: \(filename)")
                         print("Image saved to: \(filename.path)")  // Print the full path
                         let url = "http://127.0.0.1:5000/upload"  // Use http for local testing without SSL
                         print("Uploading to: \(url)")
@@ -88,6 +89,7 @@ struct CustomImagePicker: UIViewControllerRepresentable {
                 do {
                     // Write to the file
                     try imageData.write(to: filename)
+                   
                     print("Image saved to: \(filename.path)")
                     
                 } catch {
@@ -155,8 +157,6 @@ struct CustomImagePicker: UIViewControllerRepresentable {
             }.resume()
         }
 
-
-        
 
     }
     

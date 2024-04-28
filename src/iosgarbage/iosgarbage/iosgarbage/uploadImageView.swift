@@ -6,7 +6,7 @@ struct UploadImageView: View {
     @State private var inputImage: UIImage?
     @State private var pickerSourceType: PickerSourceType = .photoLibrary
     @State private var showingMap = false // State to control navigation to the map view
-    
+    @State private var navigateToRecycleInfo = false
     @State private var showingRank = false
 
     var body: some View {
@@ -98,6 +98,33 @@ struct UploadImageView: View {
                 
             }
 
+            Button(action: {
+                // This will toggle the showingImagePicker to true
+                self.navigateToRecycleInfo = true
+            }) {
+                Text("Result")
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: 150)
+                    .background(Color.green)
+                    .cornerRadius(20)
+                    
+            }
+            .offset(y:-130)
+            .padding(.horizontal, 40)
+            .sheet(isPresented: $navigateToRecycleInfo, onDismiss: loadImage) {
+                RecycleInfoView(
+                    topImage: UIImage(named: "demoCan")!,
+                    objectName: "Detected a can",
+                    descriptionText: "Ensure it is empty and rinse it out if possible, then recycle it without crushing, checking local guidelines to confirm specific requirements!",
+                    material: "Aluminum",
+                    saveCO2: "1.3 kg",
+                    ecoCoinValue: "+5"
+                )
+                
+            }
+            
+            
             Spacer()
  
             ZStack {
