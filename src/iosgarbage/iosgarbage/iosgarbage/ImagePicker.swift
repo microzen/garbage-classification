@@ -57,6 +57,9 @@ struct CustomImagePicker: UIViewControllerRepresentable {
                         // Write the image data to the file system
                         try imageData.write(to: filename)
                         print("Image saved to: \(filename.path)")  // Print the full path
+                        let url = "http://127.0.0.1:5000/upload"  // Use http for local testing without SSL
+                        print("Uploading to: \(url)")
+                        uploadFile(fileName: filename.lastPathComponent, fileExtension: "jpg", endpoint: url)
                     } catch {
                         print("Error saving image: \(error.localizedDescription)")
                     }
@@ -86,7 +89,6 @@ struct CustomImagePicker: UIViewControllerRepresentable {
                     // Write to the file
                     try imageData.write(to: filename)
                     print("Image saved to: \(filename.path)")
-                    uploadFile(fileName: filename.lastPathComponent, fileExtension: "jpg", endpoint: "https://http://127.0.0.1:5000/event")
                     
                 } catch {
                     print("Error saving image: \(error)")
@@ -160,6 +162,8 @@ struct CustomImagePicker: UIViewControllerRepresentable {
             }).resume()
         }
         }
+
+        
 
     }
     
