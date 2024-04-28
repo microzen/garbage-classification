@@ -65,6 +65,11 @@ struct UploadImageView: View {
                         }
                
                 
+                // Illustration or image placeholder
+//                Image("recycle_illustration") // Replace with your actual image name
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(height: 200)
             }
             
             
@@ -138,11 +143,6 @@ struct UploadImageView: View {
                                 .previewDisplayName("Map View Controller")
                         }
                     
-//                    Image("rank_grey2")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 40, height: 40)
-//                        .padding(.trailing,40)
                 }
                 .padding(.horizontal)
             }

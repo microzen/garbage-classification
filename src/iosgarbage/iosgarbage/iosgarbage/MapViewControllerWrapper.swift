@@ -8,6 +8,10 @@ struct MapViewControllerWrapper: View {
     let mylocation = CLLocationCoordinate2D(latitude: 38.541755, longitude: -121.759575)
 
     var body: some View {
+        
+        
+
+        
         NavigationView {
             TabView {
                 MapView(location: mylocation)
@@ -76,7 +80,7 @@ struct BottomBarInMap: View {
                        .padding(.trailing, 40)
             
         }
-        .frame(width: UIScreen.main.bounds.width, height: 70)
+        .frame(width: UIScreen.main.bounds.width, height: 80)
         .background(Color.white)
         .cornerRadius(20)
         .shadow(color: .gray, radius: 5, x: 0, y: 2)
@@ -86,9 +90,21 @@ struct BottomBarInMap: View {
 
 struct MapView: View {
     let location: CLLocationCoordinate2D
+    let station1 = CLLocationCoordinate2D(latitude: 38.549503, longitude: -121.718102)
+    let station2 = CLLocationCoordinate2D(latitude: 38.670727, longitude: -121.727959)
+    let station3 = CLLocationCoordinate2D(latitude: 38.672582, longitude: -121.767605)
+    let station4 = CLLocationCoordinate2D(latitude: 38.680488, longitude: -121.752287)
+    let station5 = CLLocationCoordinate2D(latitude: 38.447819, longitude: -121.822338)
+    let station6 = CLLocationCoordinate2D(latitude: 38.528112, longitude: -121.966389)
 
     var body: some View {
-        Map(coordinateRegion: .constant(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))))
+        Map(){
+            Marker("station1", coordinate: station1)
+            Marker("station2", coordinate: station2)
+            Marker("station3", coordinate: station3)
+            Marker("station4", coordinate: station4)
+            Marker("station5", coordinate: station5)
+        }
             .edgesIgnoringSafeArea(.all)
     }
 }
