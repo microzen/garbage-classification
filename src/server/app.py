@@ -3,12 +3,10 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import base64
 import os
+import requests
 
-client = OpenAI
+# OpenAI API Key
 
-def encode_image(image_path):
-  with open(image_path, "rb") as image_file:
-    return base64.b64encode(image_file.read()).decode('utf-8')
 
 app = Flask(__name__)
 
@@ -17,16 +15,48 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def test_image_processing():
     # Path to your image
     if request.method == 'POST':
-        print("POST -- Z")
         if 'image' not in request.files:
             print('file image can\'t find!')
             return 'No file part'
-        print("pass")
         file = request.files['image']
-        print(file.filename)
-        file.save(os.path.join("./img", "123.jpg"))
-        print("success")
-        return 'success'
+        base64_image = base64.b64encode(file.read()).decode('utf-8')
+
+        headers = {
+          "Content-Type": "application/json",
+          "Authorization": f"Bearer {api_key}"
+        }
+        prompt = f"What is this? What kind of garbage is this? Rate this on a scale of 10. The larger the number, the more hazardous it is."
+        payload = {
+            "model": "gpt-4-turbo",
+            "messages": [
+              {"role": "user", "content": [
+                  {
+                    "type": "text",
+                    "text": prompt
+                  },
+                  {
+                    "type": "text",
+                    "text": "You are a garbage classifier"
+                  },
+                  {
+                    "type": "text",
+                    "text": "This is a lithium-based battery. 10. Hazardous waste."
+                  },
+                  {
+                    "type": "image_url",
+                    "image_url": {
+                      "url": f"data:image/jpeg;base64,{base64_image}"
+                    }
+                  }
+                ]
+              }
+            ],
+            "max_tokens": 300
+        }
+
+        response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+        print(response.json())
+        return response.json()
 
 
 if __name__ == '__main__':
