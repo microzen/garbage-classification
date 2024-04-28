@@ -6,6 +6,8 @@ struct UploadImageView: View {
     @State private var inputImage: UIImage?
     @State private var pickerSourceType: PickerSourceType = .photoLibrary
     @State private var showingMap = false // State to control navigation to the map view
+    
+    @State private var showingRank = false
 
     var body: some View {
         VStack() {
@@ -124,12 +126,28 @@ struct UploadImageView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 40, height: 40)
+                        .offset(x:20)
                     Spacer()
-                    Image("rank_grey2")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40)
-                        .padding(.trailing,40)
+                    Button(action: {
+                            self.showingRank = true
+                        }) {
+                            Image("rank_grey2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .padding(.trailing,40)
+                        }
+                        .padding(.leading, 40)
+                        .sheet(isPresented: $showingRank) {
+                            RewardsView()
+                                .previewDisplayName("Map View Controller")
+                        }
+                    
+//                    Image("rank_grey2")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 40, height: 40)
+//                        .padding(.trailing,40)
                 }
                 .padding(.horizontal)
             }
