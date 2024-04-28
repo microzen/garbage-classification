@@ -55,7 +55,7 @@ struct BottomBarInMap: View {
                     .scaledToFit()
                     .frame(width: 40, height: 40)
             }
-            .padding(.leading, 40)
+            .padding(.leading, 45)
 
             Spacer()
 
@@ -64,10 +64,10 @@ struct BottomBarInMap: View {
                 Image("mdi_leaf")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 45, height: 45)
             }
             .padding(.trailing, 40)
-            .offset(x: 35)
+            .offset(x: 27)
 
             Spacer()
 
