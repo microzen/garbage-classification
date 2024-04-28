@@ -27,7 +27,7 @@ if not, please install [Python](https://www.python.org/downloads/) first.
 
 ### Run Flask Project
 
-Install Flask package:
+Install package:
 
 ```shell
 python3 -m venv .venv
@@ -39,12 +39,20 @@ pip3 install Flask-RESTful
 
 # install Flask CORS
 pip3 install Flask-CORS
+
+# install OpenAI Api
+pip install --upgrade openai
+
+# install Requests
+pip install requests
 ```
+
+
 
 Run Flask:
 ```shell
 # go to the path where app.py is on.
-cd ./server
+cd ./src/server
 python3 -m flask run
 ```
 
