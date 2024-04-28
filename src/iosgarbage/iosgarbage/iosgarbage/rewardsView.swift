@@ -37,7 +37,7 @@ struct RewardCell: View {
                 Text("Use Now")
                     .font(.system(size: 15))
                     .foregroundColor(.white)
-                    .padding(.vertical, 5) // Adjust vertical padding to make the button thinner
+                    .padding(.vertical, 8) // Adjust vertical padding to make the button thinner
                     .padding(.horizontal, 5) // Adjust horizontal padding for width
                     .background(Color(red: 140/255, green: 174/255, blue: 94/255)) // Use the color set named 'ShadedGreen'
                     .cornerRadius(10)
